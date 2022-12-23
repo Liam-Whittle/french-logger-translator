@@ -1,4 +1,4 @@
-# french-logger-translator A.k.a francofile
+# french-logger-translator a.k.a Francofile
 
 ## About
 Francofile is a personal project, it's made for the purpose of assisting english false-beginners & intermediate learners of french with learning and memorizing french nouns & verbs, by starting with an empty dictionary that is populated as you learn more nouns, genders & verbs, it can help solidify memory of important words that you have previously learnt or help remember newly discovered. 
