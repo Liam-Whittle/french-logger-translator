@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Francofile</string>
+    <string name="title_activity_main">Francofile</string>
+    <string name="package_name">io.francofile.app</string>
+    <string name="custom_url_scheme">io.francofile.app</string>
+</resources>

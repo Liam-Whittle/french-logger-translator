@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-family: Fred; font-size: 19px">GENDER LOOKUP
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">gender lookup</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+
+    <ng-container *ngIf="genderOutput === 'unknown'">
+      <img src="https://i.imgur.com/F2GCQ7D.png">
+    </ng-container>
+    <ng-container *ngIf="genderOutput === 'feminine'">
+      <img src="https://i.imgur.com/1IbRDzg.png">
+    </ng-container>
+    <ng-container *ngIf="genderOutput === 'masculine'">
+      <img src="https://i.imgur.com/SevS7Mx.png">
+    </ng-container>
+    <ng-container *ngIf="genderOutput === 'not found'">
+      <img src="https://i.imgur.com/9h5mUzx.png">
+    </ng-container>
+
+    <ion-card-header>
+      <ion-card-title>
+        <div style="display: inline-block;">{{outputWord}}</div>
+        <div style="display: inline-block; margin-left:7px;font-size:12px;color:#c1c1c1;">{{wordType}}</div>
+      </ion-card-title>
+      <ion-card-subtitle>Gender: {{genderOutput}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-searchbar showCancelButton="never" placeholder="Search Word" name="searchWord" type="text" [(ngModel)]="searchWord" ngDefaultControl>
+  </ion-searchbar>
+  <ion-label></ion-label>
+  <ion-label></ion-label>
+  <ion-button style="margin-left: 9px; margin-right: 9px; margin-top: 10px" expand="full"
+    [disabled]="searchWord.length <= 0" (click)="getGender()">
+    <ion-label style="font-family:Fred;font-size: 16px;">SEARCH &nbsp;</ion-label>
+  </ion-button>
+
+
+</ion-content>

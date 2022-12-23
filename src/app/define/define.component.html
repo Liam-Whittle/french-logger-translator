@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title style="font-family:Fred;font-size: 19px;">DEFINITION</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" color="light" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img src="https://i.imgur.com/CN3EN2D.png" />
+    <ion-card-header>
+      <ion-card-subtitle>English Translation
+        <ng-container *ngIf="invoice.gender == 0; else fem">
+          <ion-chip color="mas" style="float: right;">
+            <ion-label>Masculine</ion-label>
+          </ion-chip>
+        </ng-container>
+        <ng-template #fem>
+          <ion-chip color="fem" style="float: right;">
+            <ion-label>Feminine</ion-label>
+          </ion-chip>
+        </ng-template>
+      </ion-card-subtitle>
+      <ion-card-title>{{word}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{definition}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,217 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title style="font-family:Fred;font-size: 19px;">CONJUGATION/TRANSLATION</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" color="light" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+
+    <ion-card-header style="text-align: center;padding-left: 0px;padding-bottom: 0px">
+      <ion-card-title style="font-size: 31px;">{{verb.name}}</ion-card-title>
+      <ion-card-subtitle style="margin-top: 6px;">To {{def}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-item-divider>
+    </ion-item-divider>
+
+    <ion-card-content>
+      <ion-grid>
+
+        <ion-row>
+          <ion-item-divider>
+            <ion-col>
+              <div>
+                <ion-label>Infinitive</ion-label>
+                <h4>Present</h4>
+                <p>{{infPresent}}</p>
+                <hr>
+                <h4>Past</h4>
+                <p>{{infPast}}</p>
+                <hr>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+                <ion-label>Participle</ion-label>
+                <h4>Present</h4>
+                <p>{{partPresent}}</p>
+                <hr>
+                <h4>Past</h4>
+                <p>{{partPast}}</p>
+                <hr>
+              </div>
+            </ion-col>
+          </ion-item-divider>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-item-divider>
+            <ion-col>
+              <div>
+                <ion-label>Conditional</ion-label>
+                <h4>Present</h4>
+                <p>{{condPresentI}}</p>
+                <p>{{condPresentYou}}</p>
+                <p>{{condPresentHeSheWe}}</p>
+                <p>{{condPresentThey}}</p>
+                <p>{{condPresentYouFormal}}</p>
+                <p>{{condPresentWeFormal}}</p>
+                <hr>
+                <h4>Past (Form 1)</h4>
+                <p>{{condPassform1I}}</p>
+                <p>{{condPassform1You}}</p>
+                <p>{{condPassform1HeSheWe}}</p>
+                <p>{{condPassform1They}}</p>
+                <p>{{condPassform1YouFormal}}</p>
+                <p>{{condPassform1WeFormal}}</p>
+                <hr>
+                <h4>Past (Form 2)</h4>
+                <p>{{condPassform2I}}</p>
+                <p>{{condPassform2You}}</p>
+                <p>{{condPassform2HeSheWe}}</p>
+                <p>{{condPassform2They}}</p>
+                <p>{{condPassform2YouFormal}}</p>
+                <p>{{condPassform2WeFormal}}</p>
+                <hr>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+                <ion-label>Imperative</ion-label>
+                <h4>Present</h4>
+                <p>{{impPresent1}}</p>
+                <p>{{impPresent2}}</p>
+                <p>{{impPresent3}}</p>               
+                <hr>
+                <h4>Past</h4>
+                <p>{{impPast1}}</p>
+                <p>{{impPast2}}</p>
+                <p>{{impPast3}}</p>
+                <hr>
+              </div>
+            </ion-col>
+          </ion-item-divider>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-item-divider>
+            <ion-col>
+              <div>
+                <ion-label>Subjunctive</ion-label>
+                <h4>Present</h4>
+                <p>{{subPresentI}}</p>
+                <p>{{subPresentYou}}</p>
+                <p>{{subPresentHeSheWe}}</p>
+                <p>{{subPresentThey}}</p>
+                <p>{{subPresentYouFormal}}</p>
+                <p>{{subPresentWeFormal}}</p>
+                <hr>
+                <h4>Past</h4>
+                <p>{{subPastI}}</p>
+                <p>{{subPastYou}}</p>
+                <p>{{subPastHeSheWe}}</p>
+                <p>{{subPastThey}}</p>
+                <p>{{subPastYouFormal}}</p>
+                <p>{{subPastWeFormal}}</p>
+                <hr>
+                <h4>Imperfect</h4>
+                <p>{{subImperfectI}}</p>
+                <p>{{subImperfectYou}}</p>
+                <p>{{subImperfectHeSheWe}}</p>
+                <p>{{subImperfectThey}}</p>
+                <p>{{subImperfectYouFormal}}</p>
+                <p>{{subImperfectWeFormal}}</p>
+                <hr>
+                <h4>Pluperfect</h4>
+                <p>{{subPluperfectI}}</p>
+                <p>{{subPluperfectYou}}</p>
+                <p>{{subPluperfectHeSheWe}}</p>
+                <p>{{subPluperfectThey}}</p>
+                <p>{{subPluperfectYouFormal}}</p>
+                <p>{{subPluperfectWeFormal}}</p>
+                <hr>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+                <ion-label>Indicative</ion-label>
+                <h4>Present</h4>
+                <p>{{indPresentI}}</p>
+                <p>{{indPresentYou}}</p>
+                <p>{{indPresentHeSheWe}}</p>
+                <p>{{indPresentThey}}</p>
+                <p>{{indPresentYouFormal}}</p>
+                <p>{{indPresentWeFormal}}</p>
+                <hr>
+                <h4>Present Perfect</h4>
+                <p>{{indPresentperI}}</p>
+                <p>{{indPresentperYou}}</p>
+                <p>{{indPresentperHeSheWe}}</p>
+                <p>{{indPresentperThey}}</p>
+                <p>{{indPresentperYouFormal}}</p>
+                <p>{{indPresentperWeFormal}}</p>
+                <hr>
+                <h4>Imperfect</h4>
+                <p>{{indImperfectI}}</p>
+                <p>{{indImperfectYou}}</p>
+                <p>{{indImperfectHeSheWe}}</p>
+                <p>{{indImperfectThey}}</p>
+                <p>{{indImperfectYouFormal}}</p>
+                <p>{{indImperfectWeFormal}}</p>
+                <hr>
+                <h4>Pluperfect</h4>
+                <p>{{indPluperfectI}}</p>
+                <p>{{indPluperfectYou}}</p>
+                <p>{{indPluperfectHeSheWe}}</p>
+                <p>{{indPluperfectThey}}</p>
+                <p>{{indPluperfectYouFormal}}</p>
+                <p>{{indPluperfectWeFormal}}</p>
+                <hr>
+                <h4>Simple Past</h4>
+                <p>{{indSimppastI}}</p>
+                <p>{{indSimppastYou}}</p>
+                <p>{{indSimppastHeSheWe}}</p>
+                <p>{{indSimppastThey}}</p>
+                <p>{{indSimppastYouFormal}}</p>
+                <p>{{indSimppastWeFormal}}</p>
+                <hr>
+                <h4>Past Perfect</h4>
+                <p>{{indPastperI}}</p>
+                <p>{{indPastperYou}}</p>
+                <p>{{indPastperHeSheWe}}</p>
+                <p>{{indPastperThey}}</p>
+                <p>{{indPastperYouFormal}}</p>
+                <p>{{indPastperWeFormal}}</p>
+                <hr>
+                <h4>Simple Future</h4>
+                <p>{{indSimpfutI}}</p>
+                <p>{{indSimpfutYou}}</p>
+                <p>{{indSimpfutHeSheWe}}</p>
+                <p>{{indSimpfutThey}}</p>
+                <p>{{indSimpfutYouFormal}}</p>
+                <p>{{indSimpfutWeFormal}}</p>
+                <hr>
+                <h4>Future Perfect</h4>
+                <p>{{indFutureperI}}</p>
+                <p>{{indFutureperYou}}</p>
+                <p>{{indFutureperHeSheWe}}</p>
+                <p>{{indFutureperThey}}</p>
+                <p>{{indFutureperYouFormal}}</p>
+                <p>{{indFutureperWeFormal}}</p>
+                <hr>
+              </div>
+            </ion-col>
+          </ion-item-divider>
+        </ion-row>
+
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,124 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-family: Fred; font-size: 19px">NOUNS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Nouns</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ng-template #invoicesEmpty>
+    <div style="margin-top: 280px">
+      <center>
+        <ion-label style="font-family: Fred; font-size: 19px">DICTIONARY IS EMPTY</ion-label>
+      </center>
+      <center>
+        <ion-note style="font-size: 19px">Add new noun</ion-note>
+      </center>
+    </div>
+  </ng-template>
+  <ng-container *ngIf="invoicesPopulated; else invoicesEmpty">
+    <ion-searchbar type="text" debounce="500" (ionChange)="getItems($event)"></ion-searchbar>
+    <ion-list *ngIf="isItemAvailable; else searchEmpty">
+      <ng-container *ngFor="let invoice of invoices">
+        <ion-item-sliding>
+          <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="presentAlertMultipleButtons(invoice)">
+              <ion-icon style="font-size: 25px; margin: 5px" name="trash-sharp"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+
+          <ion-item class="ion-activatable ripple-parent" (click)="openDefine(invoice)">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-label>{{invoice.name}}</ion-label>
+
+            <ng-container *ngIf="invoice.gender == 0; else fem">
+              <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16.000000pt" height="16.000000pt"
+                viewBox="0 0 240.000000 240.000000" preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0.000000,240.000000) scale(0.100000,-0.100000)" fill="#289EFF" stroke="none">
+                  <path d="M1016 2384 c-253 -39 -477 -154 -662 -338 -187 -188 -300 -411 -338
+           -669 -57 -381 65 -749 338 -1023 188 -187 411 -300 669 -338 381 -57 749 65
+           1023 338 187 188 300 411 338 669 57 381 -65 749 -338 1023 -274 273 -651 397
+           -1030 338z" />
+                </g>
+              </svg>
+            </ng-container>
+
+            <ng-template #fem>
+              <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16.000000pt" height="16.000000pt"
+                viewBox="0 0 240.000000 240.000000" preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0.000000,240.000000) scale(0.100000,-0.100000)" fill="#FF285A" stroke="none">
+                  <path d="M1016 2384 c-253 -39 -477 -154 -662 -338 -187 -188 -300 -411 -338
+            -669 -57 -381 65 -749 338 -1023 188 -187 411 -300 669 -338 381 -57 749 65
+            1023 338 187 188 300 411 338 669 57 381 -65 749 -338 1023 -274 273 -651 397
+            -1030 338z" />
+                </g>
+              </svg>
+            </ng-template>
+
+            <ion-icon slot="end" name="chevron-back-outline"></ion-icon>
+
+          </ion-item>
+        </ion-item-sliding>
+      </ng-container>
+    </ion-list>
+    <ng-template #searchEmpty>
+      <ion-list>
+        <ng-container *ngFor="let invoice of invoices">
+          <ion-item-sliding>
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="presentAlertMultipleButtons(invoice)">
+                <ion-icon style="font-size: 25px; margin: 5px" name="trash-sharp"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+
+            <ion-item class="ion-activatable ripple-parent" (click)="openDefine(invoice)">
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-label>{{invoice.name}}</ion-label>
+
+              <ng-container *ngIf="invoice.gender == 0; else fem">
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16.000000pt" height="16.000000pt"
+                  viewBox="0 0 240.000000 240.000000" preserveAspectRatio="xMidYMid meet">
+                  <g transform="translate(0.000000,240.000000) scale(0.100000,-0.100000)" fill="#289EFF" stroke="none">
+                    <path d="M1016 2384 c-253 -39 -477 -154 -662 -338 -187 -188 -300 -411 -338
+             -669 -57 -381 65 -749 338 -1023 188 -187 411 -300 669 -338 381 -57 749 65
+             1023 338 187 188 300 411 338 669 57 381 -65 749 -338 1023 -274 273 -651 397
+             -1030 338z" />
+                  </g>
+                </svg>
+              </ng-container>
+
+              <ng-template #fem>
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16.000000pt" height="16.000000pt"
+                  viewBox="0 0 240.000000 240.000000" preserveAspectRatio="xMidYMid meet">
+                  <g transform="translate(0.000000,240.000000) scale(0.100000,-0.100000)" fill="#FF285A" stroke="none">
+                    <path d="M1016 2384 c-253 -39 -477 -154 -662 -338 -187 -188 -300 -411 -338
+              -669 -57 -381 65 -749 338 -1023 188 -187 411 -300 669 -338 381 -57 749 65
+              1023 338 187 188 300 411 338 669 57 381 -65 749 -338 1023 -274 273 -651 397
+              -1030 338z" />
+                  </g>
+                </svg>
+              </ng-template>
+
+
+              <ion-icon slot="end" name="chevron-back-outline"></ion-icon>
+
+            </ion-item>
+          </ion-item-sliding>
+        </ng-container>
+      </ion-list>
+    </ng-template>
+  </ng-container>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" style="margin-bottom: 45px; margin-right: 5px">
+    <ion-fab-button color="secondary" (click)="redirectToCreate()">
+      <ion-icon color="dark" name="add-sharp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
