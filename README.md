@@ -9,3 +9,8 @@ Francofile is a personal project. It's made for the purpose of assisting english
 - Create a new dictionary item within the menu dictionary and view english translations
 - Search any french noun for its gender 
 - Easy search functionality and color indicators for associated noun genders
+
+## Android Example
+<img align="left" src="https://user-images.githubusercontent.com/60028961/209415327-bc431f32-350f-4b25-9420-71ed5cf81769.jpg" width="240">
+<img align="center" src="https://user-images.githubusercontent.com/60028961/209415359-282a1e25-8dc3-497d-a4db-88ab5f8c87f6.jpg" width="240">
+
